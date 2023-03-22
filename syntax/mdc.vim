@@ -9,7 +9,46 @@ syn keyword mdcKeyword getlink control radar sensor ubind ucontrol uradar ulocat
 syn keyword mdcStructure set wait lookup
 syn keyword mdcOperator op contained
 
-syn match mdcSubCommand "\v^\s*op\s+\zsadd\ze" "\v^\s*op\s+\zssub\ze" "\v^\s*op\s+\zsmul\ze" "\v^\s*op\s+\zsdiv\ze" "\v^\s*op\s+\zsidiv\ze" "\v^\s*op\s+\zsmod\ze" "\v^\s*op\s+\zspow\ze" "\v^\s*op\s+\zsequal\ze" "\v^\s*op\s+\zsnotEqual\ze" "\v^\s*op\s+\zsland\ze" "\v^\s*op\s+\zslessThan\ze" "\v^\s*op\s+\zslessThanEq\ze" "\v^\s*op\s+\zsgreaterThan\ze" "\v^\s*op\s+\zsgreaterThanEq\ze" "\v^\s*op\s+\zsstrictEqual\ze" "\v^\s*op\s+\zsshl\ze" "\v^\s*op\s+\zsshr\ze" "\v^\s*op\s+\zsor\ze" "\v^\s*op\s+\zsand\ze" "\v^\s*op\s+\zsxor\ze" "\v^\s*op\s+\zsnot\ze" "\v^\s*op\s+\zsmax\ze" "\v^\s*op\s+\zsmin\ze" "\v^\s*op\s+\zsangle\ze" "\v^\s*op\s+\zslen\ze" "\v^\s*op\s+\zsnoise\ze" "\v^\s*op\s+\zsabs\ze" "\v^\s*op\s+\zslog\ze" "\v^\s*op\s+\zslog10\ze" "\v^\s*op\s+\zsfloor\ze" "\v^\s*op\s+\zsceil\ze" "\v^\s*op\s+\zssqrt\ze" "\v^\s*op\s+\zsrand\ze" "\v^\s*op\s+\zssin\ze" "\v^\s*op\s+\zscos\ze" "\v^\s*op\s+\zstan\ze" "\v^\s*op\s+\zsasin\ze" "\v^\s*op\s+\zsacos\ze" "\v^\s*op\s+\zsatan\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsadd\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zssub\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsmul\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsdiv\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsidiv\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsmod\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zspow\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsequal\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsnotEqual\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsland\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zslessThan\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zslessThanEq\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsgreaterThan\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsgreaterThanEq\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsstrictEqual\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsshl\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsshr\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsor\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsand\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsxor\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsnot\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsmax\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsmin\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsangle\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zslen\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsnoise\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsabs\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zslog\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zslog10\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsfloor\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsceil\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zssqrt\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsrand\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zssin\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zscos\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zstan\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsasin\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsacos\ze" contains=mdcOperator
+syn match mdcSubCommand "\v^\s*op\s+\zsatan\ze" contains=mdcOperator
+
 syn keyword mdcSubCommand ore building spawn damaged core storage generator turret factory repair rally battery resupply reactor idle stop move approach boost pathfind target targetp itemDrop itemTake payDrop payTake payEnter mine flag build getBlock within always distance health shield armor maxHealth any enemy ally player attacker flying boss ground enabled shoot shootp configure color clear color stroke line rect lineRect poly linePoly triangle image block unit item liquid
 
 syn match mdcNumber "\v<\d+>"

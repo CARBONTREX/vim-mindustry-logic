@@ -8,9 +8,8 @@ syn keyword mdcFlash drawflush printflush
 syn keyword mdcKeyword getlink control radar sensor ubind ucontrol uradar ulocate noop
 syn keyword mdcStructure set wait lookup
 
-syn match mdcOperator "\v^\s*op" contained
-syn keyword mdcOpSubCommand add sub mul div idiv mod pow equal notEqual land lessThan lessThanEq greaterThan greaterThanEq strictEqual shl shr or and xor not max min angle len noise abs log log10 floor ceil sqrt rand sin cos tan asin acos atan contained
-syn match mdcStatement "\v^\s*op(\s+[a-zA-Z0-9]*)?" contains=mdcOpSubCommand,mdcOperator
+syn match mdcOperator "\v^\s*op" nextgroup=mdcOpSubCommand skipwhite
+syn keyword mdcOpSubCommand add sub mul div idiv mod pow equal notEqual land lessThan lessThanEq greaterThan greaterThanEq strictEqual shl shr or and xor not max min angle len noise abs log log10 floor ceil sqrt rand sin cos tan asin acos atan 
 
 syn keyword mdcSubCommand ore building spawn damaged core storage generator turret factory repair rally battery resupply reactor idle stop move approach boost pathfind target targetp itemDrop itemTake payDrop payTake payEnter mine flag build getBlock within always distance health shield armor maxHealth any enemy ally player attacker flying boss ground enabled shoot shootp configure color clear color stroke line rect lineRect poly linePoly triangle image block unit item liquid
 

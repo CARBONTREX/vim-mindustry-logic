@@ -2,15 +2,19 @@ if exists('b:current_syntax')
     finish
 endif
 
+"wait lookup (op set) 0x 0b
+
 syn keyword mdcConditional jump end
 syn keyword mdcIO read write draw print
 syn keyword mdcFlash drawflush printflush
 syn keyword mdcKeyword getlink control radar sensor ubind ucontrol uradar ulocate noop
-syn keyword mdcSubCommand ore building spawn damaged core storage generator turret factory repair rally battery resupply reactor idle stop move approach boost pathfind target targetp itemDrop itemTake payDrop payTake mine flag build getBlock within always add sub mul div idiv mod pow equal notEqual land lessThan lessThanEq greaterThan greaterThanEq strictEqual shl shr or and xor not max min angle len noise abs log log10 sin cos tan floor ceil sqrt rand distance health shield armor maxHealth any enemy ally player attacker flying boss ground enabled shoot shootp configure color clear color stroke line rect lineRect poly linePoly triangle image
+syn keyword mdcSubCommand ore building spawn damaged core storage generator turret factory repair rally battery resupply reactor idle stop move approach boost pathfind target targetp itemDrop itemTake payDrop payTake payEnter mine flag build getBlock within always add sub mul div idiv mod pow equal notEqual land lessThan lessThanEq greaterThan greaterThanEq strictEqual shl shr or and xor not max min angle len noise abs log log10 floor ceil sqrt rand sin cos tan asin acos atan distance health shield armor maxHealth any enemy ally player attacker flying boss ground enabled shoot shootp configure color clear color stroke line rect lineRect poly linePoly triangle image
 syn keyword mdcStructure set
 syn keyword mdcOperator op
 syn match mdcNumber "\v<\d+>"
 syn match mdcNumber "\v<\d+\.\d+>"
+syn match mdcNumber "\v<0x\d+>"
+syn match mdcNumber "\v<0b\d+>"
 syn keyword mdcBool true false null
 syn keyword mdcTodos TODO XXX FIXME NOTE contained
 syn match mdcComment "\v#.*$" contains=mdcTodos

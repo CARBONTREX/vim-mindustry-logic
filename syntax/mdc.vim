@@ -11,10 +11,10 @@ syn keyword mdcStructure set
 syn keyword mdcOperator op
 syn match mdcNumber "\v<\d+>"
 syn match mdcNumber "\v<\d+\.\d+>"
-syn keyword mdcBool true false
+syn keyword mdcBool true false null
 syn keyword mdcTodos TODO XXX FIXME NOTE contained
 syn match mdcComment "\v#.*$" contains=mdcTodos
-syn match mdcAt "@[a-zA-Z0-9]*"
+syn match mdcAt "@[-a-zA-Z0-9]*"
 
 syntax region mdcString start=/"/ end=/"/ oneline contains=mdcInterpolatedWrapper
 syntax region mdcInterpolatedWrapper start="\v\\\(\s*" end="\v\s*\)" contained containedin=mdcString contains=mdcInterpolatedString

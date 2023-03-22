@@ -7,7 +7,7 @@ syn keyword mdcIO read write draw print
 syn keyword mdcFlash drawflush printflush
 syn keyword mdcKeyword getlink control radar sensor ubind ucontrol uradar ulocate noop
 syn keyword mdcStructure set wait lookup
-syn keyword mdcOperator op
+"syn keyword mdcOperator op
 
 syn match mdcSubCommand "\v^\s*op\s+\zsadd\ze"
 syn match mdcSubCommand "\v^\s*op\s+\zssub\ze"
@@ -65,7 +65,7 @@ syntax match mdcInterpolatedString "\v\w+(\(\))?" contained containedin=mdcInter
 
 
 hi def link mdcConditional Conditional
-hi def link mdcOperator Operator
+"hi def link mdcOperator Operator
 hi def link mdcIO PreProc
 hi def link mdcFlash Special
 hi def link mdcKeyword keyword

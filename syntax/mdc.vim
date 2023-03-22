@@ -13,8 +13,8 @@ syn keyword mdcStructure set
 syn keyword mdcOperator op
 syn match mdcNumber "\v<\d+>"
 syn match mdcNumber "\v<\d+\.\d+>"
-syn match mdcNumber "\v<0x\d+>"
-syn match mdcNumber "\v<0b\d+>"
+syn match mdcNumber "\v<0x\x+>"
+syn match mdcNumber "\v<0b[01]+>"
 syn keyword mdcBool true false null
 syn keyword mdcTodos TODO XXX FIXME NOTE contained
 syn match mdcComment "\v#.*$" contains=mdcTodos

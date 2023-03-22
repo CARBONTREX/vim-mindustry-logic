@@ -2,11 +2,18 @@ if exists('b:current_syntax')
     finish
 endif
 
-syn keyword mdcConditional end
-syn keyword mdcIO print
-syn keyword mdcFlush drawflush printflush
-syn keyword mdcKeyword getlink sensor ubind ulocate
-syn keyword mdcStructure read write set wait noop
+syn match mdcConditional "\v^\s*end"
+syn match mdcIO "\v^\s*print"
+syn match mdcFlush "\v^\s*drawflush" 
+syn match mdcFlush "\v^\s*printflush" 
+syn match mdcKeyword "\v^\s*getlink" 
+syn match mdcKeyword "\v^\s*sensor" 
+syn match mdcKeyword "\v^\s*ubind" 
+syn match mdcStructure "\v^\s*read" 
+syn match mdcStructure "\v^\s*write" 
+syn match mdcStructure "\v^\s*set" 
+syn match mdcStructure "\v^\s*wait" 
+syn match mdcStructure "\v^\s*noop" 
 
 syn keyword mdcOpSubCommand add sub mul div idiv mod pow equal notEqual land lessThan lessThanEq greaterThan greaterThanEq strictEqual shl shr or and xor not max min angle len noise abs log log10 floor ceil sqrt rand sin cos tan asin acos atan contained
 syn match mdcStructure "\v^\s*op" nextgroup=mdcOpSubCommand skipwhite

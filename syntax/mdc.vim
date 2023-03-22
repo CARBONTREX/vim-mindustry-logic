@@ -3,10 +3,10 @@ if exists('b:current_syntax')
 endif
 
 syn keyword mdcConditional jump end
-syn keyword mdcIO read write print
-syn keyword mdcFlash drawflush printflush
-syn keyword mdcKeyword getlink radar sensor ubind ucontrol uradar ulocate noop
-syn keyword mdcStructure set wait
+syn keyword mdcIO print
+syn keyword mdcFlush drawflush printflush
+syn keyword mdcKeyword getlink radar sensor ubind uradar ulocate
+syn keyword mdcStructure read write set wait noop
 
 syn keyword mdcOpSubCommand add sub mul div idiv mod pow equal notEqual land lessThan lessThanEq greaterThan greaterThanEq strictEqual shl shr or and xor not max min angle len noise abs log log10 floor ceil sqrt rand sin cos tan asin acos atan contained
 syn match mdcStructure "\v^\s*op" nextgroup=mdcOpSubCommand skipwhite
@@ -32,7 +32,7 @@ syn match mdcNumber "\v<0b[01]+>"
 syn keyword mdcConstant true false null
 syn keyword mdcTodos TODO XXX FIXME NOTE contained
 syn match mdcComment "\v#.*$" contains=mdcTodos
-syn match mdcAt "@[-a-zA-Z0-9]*"
+syn match mdcConstant "@[-a-zA-Z0-9]*"
 
 syntax region mdcString start=/"/ end=/"/ oneline contains=mdcInterpolatedWrapper
 syntax region mdcInterpolatedWrapper start="\v\\\(\s*" end="\v\s*\)" contained containedin=mdcString contains=mdcInterpolatedString
@@ -42,20 +42,21 @@ syntax match mdcInterpolatedString "\v\w+(\(\))?" contained containedin=mdcInter
 hi def link mdcConditional Conditional
 hi def link mdcStructure Macro
 hi def link mdcIO PreProc
-hi def link mdcFlash Special
+hi def link mdcFlush Special
 hi def link mdcKeyword keyword
 hi def link mdcTodos Todo
-hi def link mdcAt Statement
 hi def link mdcComment Comment
+
 hi def link mdcOpSubCommand Operator
 hi def link mdcLookupSubCommand Operator
 hi def link mdcDrawSubCommand Operator
 hi def link mdcControlSubCommand Operator
 hi def link mdcUcontrolSubCommand Operator
 hi def link mdcSubCommand Operator
+
 hi def link mdcNumber Number
 hi def link mdcString String
 hi def link mdcConstant Constant
-highlight default link mdcInterpolatedWrapper Delimiter
+hi def link mdcInterpolatedWrapper Delimiter
 
 let b:current_syntax = 'mdc'

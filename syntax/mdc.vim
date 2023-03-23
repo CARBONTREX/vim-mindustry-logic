@@ -3,12 +3,12 @@ if exists('b:current_syntax')
 endif
 
 syn match mdcConditional "\v^\s*end"
-syn match mdcStatement "\v^\s*print"
 syn match mdcFunction "\v^\s*drawflush" 
 syn match mdcFunction "\v^\s*printflush" 
-syn match mdcFunction "\v^\s*getlink" 
-syn match mdcFunction "\v^\s*sensor" 
 syn match mdcFunction "\v^\s*ubind" 
+syn match mdcStatement "\v^\s*print"
+syn match mdcStatement "\v^\s*getlink" 
+syn match mdcStatement"\v^\s*sensor" 
 syn match mdcStatement "\v^\s*read" 
 syn match mdcStatement "\v^\s*write" 
 syn match mdcStatement "\v^\s*set" 

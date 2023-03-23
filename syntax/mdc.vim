@@ -3,36 +3,36 @@ if exists('b:current_syntax')
 endif
 
 syn match mdcConditional "\v^\s*end"
-syn match mdcIO "\v^\s*print"
-syn match mdcKeyword "\v^\s*drawflush" 
-syn match mdcKeyword "\v^\s*printflush" 
-syn match mdcKeyword "\v^\s*getlink" 
-syn match mdcKeyword "\v^\s*sensor" 
-syn match mdcKeyword "\v^\s*ubind" 
-syn match mdcStructure "\v^\s*read" 
-syn match mdcStructure "\v^\s*write" 
-syn match mdcStructure "\v^\s*set" 
-syn match mdcStructure "\v^\s*wait" 
-syn match mdcStructure "\v^\s*noop" 
+syn match mdcStatement "\v^\s*print"
+syn match mdcFunction "\v^\s*drawflush" 
+syn match mdcFunction "\v^\s*printflush" 
+syn match mdcFunction "\v^\s*getlink" 
+syn match mdcFunction "\v^\s*sensor" 
+syn match mdcFunction "\v^\s*ubind" 
+syn match mdcStatement "\v^\s*read" 
+syn match mdcStatement "\v^\s*write" 
+syn match mdcStatement "\v^\s*set" 
+syn match mdcStatement "\v^\s*wait" 
+syn match mdcStatement "\v^\s*noop" 
 
 syn keyword mdcOpSubCommand add sub mul div idiv mod pow equal notEqual land lessThan lessThanEq greaterThan greaterThanEq strictEqual shl shr or and xor not max min angle len noise abs log log10 floor ceil sqrt rand sin cos tan asin acos atan contained
-syn match mdcStructure "\v^\s*op" nextgroup=mdcOpSubCommand skipwhite
+syn match mdcStatement "\v^\s*op" nextgroup=mdcOpSubCommand skipwhite
 
 syn keyword mdcLookupSubCommand block unit item liquid contained
-syn match mdcStructure "\v^\s*lookup" nextgroup=mdcLookupSubCommand skipwhite
+syn match mdcStatement "\v^\s*lookup" nextgroup=mdcLookupSubCommand skipwhite
 
 syn keyword mdcDrawSubCommand clear color stroke line rect lineRect poly linePoly triangle image contained
-syn match mdcIO "\v^\s*draw" nextgroup=mdcDrawSubCommand skipwhite
+syn match mdcStatement "\v^\s*draw" nextgroup=mdcDrawSubCommand skipwhite
 
 syn keyword mdcControlSubCommand enabled shoot shootp configure color contained
-syn match mdcKeyword "\v^\s*control" nextgroup=mdcControlSubCommand skipwhite
+syn match mdcFunction "\v^\s*control" nextgroup=mdcControlSubCommand skipwhite
 
 syn keyword mdcUcontrolSubCommand idle stop move approach boost pathfind target targetp itemDrop itemTake payDrop payTake payEnter payDrop mine flag build getBlock within contained
-syn match mdcKeyword "\v^\s*ucontrol" nextgroup=mdcUcontrolSubCommand skipwhite
+syn match mdcFunction "\v^\s*ucontrol" nextgroup=mdcUcontrolSubCommand skipwhite
 
 syn keyword mdcBuildingType core storage generator turret factory repair rally battery resupply reactor contained
 syn keyword mdcUlocateSubCommand ore building spawn damaged contained nextgroup=mdcBuildingType skipwhite
-syn match mdcKeyword "\v^\s*ulocate" nextgroup=mdcUlocateSubCommand skipwhite
+syn match mdcFunction "\v^\s*ulocate" nextgroup=mdcUlocateSubCommand skipwhite
 
 syn keyword mdcJumpCondition always equal notEqual lessThan lessThanEq greaterThan greaterThanEq strictEqual contained
 syn match mdcJumpLabel "\v[a-zA-Z0-9]+" contained nextgroup=mdcJumpCondition skipwhite
@@ -40,8 +40,8 @@ syn match Conditional "\v^\s*jump" nextgroup=mdcJumpLabel skipwhite
 
 syn keyword mdcRadarSort distance health shield armor maxHealth contained
 syn keyword mdcRadarCategory any enemy ally player attacker flying boss ground contained nextgroup=mdcRadarCategory,mdcRadarSort skipwhite
-syn match mdcKeyword "\v^\s*radar" nextgroup=mdcRadarCategory skipwhite
-syn match mdcKeyword "\v^\s*uradar" nextgroup=mdcRadarCategory skipwhite
+syn match mdcFunction "\v^\s*radar" nextgroup=mdcRadarCategory skipwhite
+syn match mdcFunction "\v^\s*uradar" nextgroup=mdcRadarCategory skipwhite
 
 syn match mdcNumber "\v<\d+>"
 syn match mdcNumber "\v<\d+\.\d+>"
@@ -55,9 +55,8 @@ syn match mdcConstant "@[-a-zA-Z0-9]*"
 syntax region mdcString start=/"/ end=/"/ oneline
 
 hi def link mdcConditional Conditional
-hi def link mdcStructure Macro
-hi def link mdcIO PreProc
-hi def link mdcKeyword Special
+hi def link mdcStatement Statement
+hi def link mdcFunction Function
 
 hi def link mdcTodos Todo
 hi def link mdcComment Comment

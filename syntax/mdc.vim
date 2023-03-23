@@ -58,7 +58,7 @@ hi def link mdcConditional Conditional
 hi Conditional ctermfg=green
 hi def link mdcStatement Statement
 hi def link mdcFunction Function
-hi Function ctermfg=red
+hi Function ctermfg=blue
 
 hi def link mdcTodos Todo
 hi def link mdcComment Comment

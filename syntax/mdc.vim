@@ -51,6 +51,7 @@ syn keyword mdcConstant true false null
 syn keyword mdcTodos TODO XXX FIXME NOTE contained
 syn match mdcComment "\v#.*$" contains=mdcTodos
 syn match mdcConstant "@[-a-zA-Z0-9]*"
+syn keyword mdcUnitRegister @unit
 
 syntax region mdcString start=/"/ end=/"/ oneline
 
@@ -77,5 +78,6 @@ hi def link mdcRadarType Operator
 hi def link mdcNumber Number
 hi def link mdcString String
 hi def link mdcConstant Constant
+hi def link mdcUnitRegister Identifier
 
 let b:current_syntax = 'mdc'

@@ -18,8 +18,8 @@ syn match mdcStatement "\v^\s*noop"
 syn keyword mdcOpSubCommand add sub mul div idiv mod pow equal notEqual land lessThan lessThanEq greaterThan greaterThanEq strictEqual shl shr or and xor not max min angle len noise abs log log10 floor ceil sqrt rand sin cos tan asin acos atan contained
 syn match mdcStatement "\v^\s*op" nextgroup=mdcOpSubCommand skipwhite
 
-syn keyword mdcLookupSubCommand block unit item liquid contained
-syn match mdcStatement "\v^\s*lookup" nextgroup=mdcLookupSubCommand skipwhite
+syn keyword mdcLookupType block unit item liquid contained
+syn match mdcStatement "\v^\s*lookup" nextgroup=mdcLookupType skipwhite
 
 syn keyword mdcDrawSubCommand clear color stroke line rect lineRect poly linePoly triangle image contained
 syn match mdcStatement "\v^\s*draw" nextgroup=mdcDrawSubCommand skipwhite
@@ -31,17 +31,17 @@ syn keyword mdcUcontrolSubCommand idle stop move approach boost pathfind target 
 syn match mdcFunction "\v^\s*ucontrol" nextgroup=mdcUcontrolSubCommand skipwhite
 
 syn keyword mdcBuildingType core storage generator turret factory repair rally battery resupply reactor contained
-syn keyword mdcUlocateSubCommand ore building spawn damaged contained nextgroup=mdcBuildingType skipwhite
-syn match mdcFunction "\v^\s*ulocate" nextgroup=mdcUlocateSubCommand skipwhite
+syn keyword mdcUlocateType ore building spawn damaged contained nextgroup=mdcBuildingType skipwhite
+syn match mdcFunction "\v^\s*ulocate" nextgroup=mdcUlocateType skipwhite
 
 syn keyword mdcJumpCondition always equal notEqual lessThan lessThanEq greaterThan greaterThanEq strictEqual contained
 syn match mdcJumpLabel "\v[a-zA-Z0-9]+" contained nextgroup=mdcJumpCondition skipwhite
 syn match Conditional "\v^\s*jump" nextgroup=mdcJumpLabel skipwhite
 
 syn keyword mdcRadarSort distance health shield armor maxHealth contained
-syn keyword mdcRadarCategory any enemy ally player attacker flying boss ground contained nextgroup=mdcRadarCategory,mdcRadarSort skipwhite
-syn match mdcFunction "\v^\s*radar" nextgroup=mdcRadarCategory skipwhite
-syn match mdcFunction "\v^\s*uradar" nextgroup=mdcRadarCategory skipwhite
+syn keyword mdcRadarType any enemy ally player attacker flying boss ground contained nextgroup=mdcRadarType,mdcRadarSort skipwhite
+syn match mdcFunction "\v^\s*radar" nextgroup=mdcRadarType skipwhite
+syn match mdcFunction "\v^\s*uradar" nextgroup=mdcRadarType skipwhite
 
 syn match mdcNumber "\v<\d+>"
 syn match mdcNumber "\v<\d+\.\d+>"
@@ -55,6 +55,7 @@ syn match mdcConstant "@[-a-zA-Z0-9]*"
 syntax region mdcString start=/"/ end=/"/ oneline
 
 hi def link mdcConditional Conditional
+hi Conditional ctermfg=green
 hi def link mdcStatement Statement
 hi def link mdcFunction Function
 
@@ -62,15 +63,15 @@ hi def link mdcTodos Todo
 hi def link mdcComment Comment
 
 hi def link mdcOpSubCommand Operator
-hi def link mdcLookupSubCommand Operator
+hi def link mdcLookupType Operator
 hi def link mdcDrawSubCommand Operator
 hi def link mdcControlSubCommand Operator
 hi def link mdcUcontrolSubCommand Operator
-hi def link mdcUlocateSubCommand Operator
+hi def link mdcUlocateType Operator
 hi def link mdcBuildingType Operator
 hi def link mdcJumpCondition Operator
 hi def link mdcRadarSort Operator
-hi def link mdcRadarCategory Operator
+hi def link mdcRadarType Operator
 
 hi def link mdcNumber Number
 hi def link mdcString String

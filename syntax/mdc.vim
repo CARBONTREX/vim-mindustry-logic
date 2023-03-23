@@ -4,8 +4,8 @@ endif
 
 syn match mdcConditional "\v^\s*end"
 syn match mdcIO "\v^\s*print"
-syn match mdcFlush "\v^\s*drawflush" 
-syn match mdcFlush "\v^\s*printflush" 
+syn match mdcKeyword "\v^\s*drawflush" 
+syn match mdcKeyword "\v^\s*printflush" 
 syn match mdcKeyword "\v^\s*getlink" 
 syn match mdcKeyword "\v^\s*sensor" 
 syn match mdcKeyword "\v^\s*ubind" 
@@ -57,8 +57,7 @@ syntax region mdcString start=/"/ end=/"/ oneline
 hi def link mdcConditional Conditional
 hi def link mdcStructure Macro
 hi def link mdcIO PreProc
-hi def link mdcFlush Special
-hi def link mdcKeyword keyword
+hi def link mdcKeyword Special
 
 hi def link mdcTodos Todo
 hi def link mdcComment Comment
